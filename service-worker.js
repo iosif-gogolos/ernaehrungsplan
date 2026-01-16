@@ -1,5 +1,10 @@
-const CACHE_NAME = 'csv-data-cache-v1';
-const CSV_URL = '/path/to/your/data.csv'; // Replace with your actual CSV file path
+const CACHE_NAME = 'csv-data-cache-v2'; // Bumped version to force update
+const CSV_URL = 'ernaehrung.csv'; 
+const FILES_TO_CACHE = [
+  './',
+  './index.html',
+  `./${CSV_URL}`
+];
 
 self.addEventListener('install', (event) => {
   // Perform install steps
@@ -7,14 +12,20 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Opened cache');
-        return cache.add(CSV_URL);
+        // Cache Key App Files (App Shell + CSV)
+        return cache.addAll(FILES_TO_CACHE);
       })
   );
 });
 
 self.addEventListener('fetch', (event) => {
   // Intercept fetch requests
-  if (event.request.url.includes(CSV_URL)) {
+  // We now check if the URL matches the CSV OR the likely URLs for the app itself
+  const url = new URL(event.request.url);
+  const isCsv = url.pathname.endsWith(CSV_URL);
+  const isAppShell = url.pathname.endsWith('/') || url.pathname.endsWith('index.html');
+
+  if (isCsv || isAppShell) {
     event.respondWith(
       caches.match(event.request)
         .then((response) => {
@@ -22,7 +33,8 @@ self.addEventListener('fetch', (event) => {
           if (response) {
             return response;
           }
-          // Clone the request because it's a one-time use stream
+
+          // Not in cache? Fetch from network
           const fetchRequest = event.request.clone();
 
           return fetch(fetchRequest).then(
@@ -42,7 +54,10 @@ self.addEventListener('fetch', (event) => {
 
               return response;
             }
-          );
+          ).catch(() => {
+            // Optional: You could return a fallback here if network fails and no cache exists
+            console.log('Network request failed and no cache for:', event.request.url);
+          });
         })
     );
   }
@@ -63,4 +78,6 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
+  // Ensure the new service worker takes over immediately
+  return self.clients.claim();
 });
