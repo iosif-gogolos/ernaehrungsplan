@@ -1,0 +1,1336 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ernährungsplan (3 Wochen) • Planner + Einkaufsliste</title>
+
+  <!-- Modern, clean styling (no framework required) -->
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --card2:#0f1730;
+      --text:#e7ecff;
+      --muted:#a8b2d6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --accent2:#2ee59d;
+      --danger:#ff4d6d;
+      --ok:#32d583;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius2:12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 15% 10%, rgba(124,92,255,.22), transparent 60%),
+                  radial-gradient(1200px 800px at 85% 25%, rgba(46,229,157,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:0 auto;padding:28px 16px 44px}
+    header{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .title{
+      display:flex; flex-direction:column; gap:6px;
+      min-width:260px;
+    }
+    h1{
+      margin:0;
+      font-size:22px;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size:13px;
+      max-width:800px;
+    }
+
+    .pillbar{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-end;
+    }
+
+    .pill{
+      display:flex; gap:8px; align-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:999px;
+      box-shadow: 0 1px 0 rgba(255,255,255,.08) inset;
+    }
+    .pill label{
+      font-size:12px;color:var(--muted)
+    }
+    select, input[type="search"], input[type="file"]{
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 10px;
+      outline:none;
+      font-size:13px;
+    }
+    input[type="file"]{
+      border-radius:999px;
+      padding:7px 10px;
+      max-width:260px;
+    }
+    input[type="search"]{
+      min-width:220px;
+    }
+    select{
+      cursor:pointer;
+    }
+    option{background:#0b1020;color:var(--text)}
+    .btn{
+      background:linear-gradient(180deg, rgba(124,92,255,.95), rgba(124,92,255,.65));
+      border:1px solid rgba(124,92,255,.6);
+      color:white;
+      border-radius:999px;
+      padding:9px 12px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:13px;
+      transition: transform .05s ease;
+      box-shadow: 0 10px 20px rgba(124,92,255,.22);
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn.secondary{
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      box-shadow:none;
+      font-weight:600;
+      color:var(--text);
+    }
+    .btn.danger{
+      background:rgba(255,77,109,.14);
+      border:1px solid rgba(255,77,109,.28);
+      box-shadow:none;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.55fr .95fr;
+      gap:14px;
+      margin-top:10px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr}
+      .pillbar{justify-content:flex-start}
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:14px 14px 12px;
+      border-bottom:1px solid var(--line);
+      display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .card .hd strong{font-size:13px;letter-spacing:.2px}
+    .card .hd small{color:var(--muted)}
+    .card .bd{padding:14px}
+    .muted{color:var(--muted)}
+    .hint{
+      padding:10px 12px;
+      border-radius:var(--radius2);
+      border:1px dashed rgba(255,255,255,.18);
+      color:var(--muted);
+      font-size:13px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .dayBlock{
+      margin-bottom:12px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .dayHeader{
+      padding:12px 14px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    .dayHeader .left{
+      display:flex; flex-direction:column;
+      gap:2px;
+    }
+    .dayHeader .left .d{
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .dayHeader .left .meta{
+      font-size:12px;color:var(--muted)
+    }
+    .dayHeader .right{
+      display:flex; gap:8px; align-items:center; flex-wrap:wrap; justify-content:flex-end;
+    }
+
+    .mealRow{
+      display:grid;
+      grid-template-columns: 150px 1fr;
+      gap:10px;
+      padding:12px 14px;
+      border-top:1px solid var(--line);
+    }
+    @media (max-width: 640px){
+      .mealRow{grid-template-columns: 1fr}
+    }
+
+    .mealType{
+      display:flex; flex-direction:column; gap:6px;
+      padding-right:6px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      width: fit-content;
+    }
+    .badge.green{border-color:rgba(50,213,131,.35); background:rgba(50,213,131,.10)}
+    .badge.purple{border-color:rgba(124,92,255,.35); background:rgba(124,92,255,.12)}
+    .badge.gray{opacity:.92}
+    .mealActions{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      margin-top:2px;
+    }
+
+    .ingredients{
+      display:flex; flex-direction:column; gap:10px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+    }
+    th, td{
+      text-align:left;
+      padding:10px 10px;
+      border-bottom:1px solid var(--line);
+      font-size:13px;
+      vertical-align:top;
+    }
+    th{
+      font-size:12px;
+      color:var(--muted);
+      background:rgba(255,255,255,.03);
+    }
+    tr:last-child td{border-bottom:none}
+
+    .check{
+      display:flex; align-items:center; gap:8px;
+      user-select:none;
+    }
+    input[type="checkbox"]{
+      width:18px; height:18px;
+      accent-color: var(--accent);
+      cursor:pointer;
+    }
+
+    .rightPanel .bd{display:flex; flex-direction:column; gap:10px}
+    .tabs{
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .tab{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      cursor:pointer;
+      font-size:13px;
+      font-weight:650;
+      color:var(--muted);
+    }
+    .tab.active{
+      color:var(--text);
+      border-color:rgba(124,92,255,.55);
+      background:rgba(124,92,255,.14);
+    }
+
+    .list{
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .listItem{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:14px;
+      padding:10px 12px;
+      display:flex; justify-content:space-between; gap:10px; align-items:flex-start;
+    }
+    .listItem .name{font-weight:700;font-size:13px}
+    .listItem .meta{font-size:12px;color:var(--muted)}
+    .listItem .qty{
+      font-size:13px;
+      font-weight:750;
+      white-space:nowrap;
+    }
+
+    .footerCard{
+      margin-top:14px;
+    }
+
+    .recipeBox{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+    }
+    .recipeBox .top{
+      padding:14px;
+      border-bottom:1px solid var(--line);
+      display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+    }
+    .recipeBox .content{
+      padding:14px;
+      display:none;
+    }
+    .recipeBox .content.show{display:block}
+    .recipeBox ol{
+      margin:0;
+      padding-left:18px;
+    }
+    .recipeBox li{margin:6px 0}
+    .chip{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:12px;
+      border:1px solid rgba(46,229,157,.35);
+      background:rgba(46,229,157,.10);
+      color:var(--text);
+    }
+    .smallPrint{
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .toast{
+      position:fixed;
+      bottom:16px; left:50%;
+      transform:translateX(-50%);
+      background:rgba(17,26,51,.92);
+      border:1px solid var(--line);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:999px;
+      box-shadow: var(--shadow);
+      opacity:0;
+      pointer-events:none;
+      transition: opacity .2s ease;
+      font-size:13px;
+    }
+    .toast.show{opacity:1}
+    .kpiRow{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .kpi{
+      flex:1;
+      min-width:180px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+    }
+    .kpi .v{font-weight:800;font-size:16px}
+    .kpi .l{color:var(--muted);font-size:12px}
+
+    .divider{
+      height:1px;background:var(--line); margin:10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Ernährungsplan (3 Wochen) • Planner + Einkaufsliste</h1>
+        <div class="subtitle">
+          Lädt <code>ernaehrung.csv</code> (gleicher Ordner) oder du lädst sie über den Button hoch.
+          Du kannst Mahlzeiten planen (Checkbox) → Einkaufsliste wird automatisch berechnet.
+        </div>
+      </div>
+
+      <div class="pillbar">
+        <div class="pill" title="Wenn du die Seite direkt per Doppelklick öffnest, blockt der Browser oft das Laden per fetch. Dann CSV hier hochladen.">
+          <label>CSV</label>
+          <input id="csvFile" type="file" accept=".csv,text/csv" />
+        </div>
+
+        <div class="pill">
+          <label>Woche</label>
+          <select id="weekFilter"></select>
+        </div>
+
+        <div class="pill">
+          <label>Tag</label>
+          <select id="dayFilter"></select>
+        </div>
+
+        <div class="pill">
+          <label>Mahlzeit</label>
+          <select id="mealFilter"></select>
+        </div>
+
+        <div class="pill">
+          <label>Suche</label>
+          <input id="search" type="search" placeholder="z.B. Lachs, Linsen, Brokkoli..." />
+        </div>
+
+        <button class="btn secondary" id="resetBtn">Reset</button>
+        <button class="btn danger" id="clearPlanBtn">Plan löschen</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- LEFT: PLAN -->
+      <section class="card">
+        <div class="hd">
+          <strong>Plan</strong>
+          <small class="muted" id="planMeta">—</small>
+        </div>
+        <div class="bd">
+          <div class="hint" id="statusHint">
+            CSV wird geladen… Falls nichts erscheint: bitte <code>ernaehrung.csv</code> im gleichen Ordner ablegen oder oben hochladen.
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kpiRow">
+            <div class="kpi">
+              <div class="v" id="kpiMeals">—</div>
+              <div class="l">Mahlzeiten im Filter</div>
+            </div>
+            <div class="kpi">
+              <div class="v" id="kpiPlanned">—</div>
+              <div class="l">Geplant (Checkbox)</div>
+            </div>
+            <div class="kpi">
+              <div class="v" id="kpiDays">—</div>
+              <div class="l">Tage im Filter</div>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div id="planRoot"></div>
+        </div>
+      </section>
+
+      <!-- RIGHT: SHOPPING LIST -->
+      <aside class="card rightPanel">
+        <div class="hd">
+          <strong>Einkaufsliste</strong>
+          <small class="muted">automatisch berechnet</small>
+        </div>
+        <div class="bd">
+          <div class="tabs">
+            <button class="tab active" id="tabPlanned">Geplant</button>
+            <button class="tab" id="tabWeek">Gesamte Woche</button>
+          </div>
+
+          <div class="smallPrint">
+            * Mengen werden nur dann addiert, wenn sie numerisch sind (z.B. <em>180 g</em>).
+            Bereiche wie <em>100–150 g</em> werden als Text übernommen.
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn" id="copyListBtn">Liste kopieren</button>
+            <button class="btn secondary" id="downloadListBtn">Als CSV exportieren</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div id="shoppingRoot" class="list"></div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- RECIPES -->
+    <section class="card footerCard">
+      <div class="hd">
+        <strong>Zubereitungsanweisungen (entzündungshemmende Mahlzeiten)</strong>
+        <small class="muted">Dropdown → genaue Schritte</small>
+      </div>
+      <div class="bd">
+        <div class="recipeBox">
+          <div class="top">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-weight:800">Rezept auswählen</div>
+              <div class="smallPrint">Hier sind präzise Anweisungen für die wichtigsten anti-entzündlichen Gerichte aus dem Plan.</div>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+              <span class="chip">Omega-3 • Hülsenfrüchte • Gemüse</span>
+              <select id="recipeSelect" style="min-width:300px">
+                <option value="">— Bitte wählen —</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="content" id="recipeContent"></div>
+        </div>
+
+        <div style="height:10px"></div>
+        <div class="hint">
+          Tipp: Für sehr empfindliche Haut oft besser verträglich → mild würzen, nicht scharf, eher gedünstet/Ofen statt stark angebraten.
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast">Kopiert ✅</div>
+
+  <script>
+    /******************************************************************
+     * 1) CSV LOADING (fetch or file upload)
+     ******************************************************************/
+    const CSV_DEFAULT_PATH = "ernaehrung.csv";
+    const STORAGE_KEY = "ernaehrung-plan-v1"; // stores planned meal keys
+
+    const el = (id) => document.getElementById(id);
+
+    const weekFilter = el("weekFilter");
+    const dayFilter  = el("dayFilter");
+    const mealFilter = el("mealFilter");
+    const searchBox  = el("search");
+    const csvFile    = el("csvFile");
+
+    const planRoot   = el("planRoot");
+    const shoppingRoot = el("shoppingRoot");
+    const statusHint = el("statusHint");
+    const planMeta   = el("planMeta");
+
+    const tabPlanned = el("tabPlanned");
+    const tabWeek    = el("tabWeek");
+
+    const kpiMeals   = el("kpiMeals");
+    const kpiPlanned = el("kpiPlanned");
+    const kpiDays    = el("kpiDays");
+
+    const toast      = el("toast");
+
+    let rows = [];           // raw rows from CSV
+    let meals = [];          // grouped meals
+    let shoppingMode = "planned"; // "planned" | "week"
+
+    const DAY_ORDER = ["Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag"];
+    const MEAL_ORDER = ["Frühstück","Snack","Mittag","Abend"];
+
+    function showToast(text="Kopiert ✅"){
+      toast.textContent = text;
+      toast.classList.add("show");
+      setTimeout(()=>toast.classList.remove("show"), 1300);
+    }
+
+    function normalize(s){
+      return String(s ?? "").trim();
+    }
+
+    // Minimal CSV parser (works for your structure, including quoted commas)
+    function parseCSV(text){
+      const lines = text.replace(/\r\n/g,"\n").replace(/\r/g,"\n").split("\n").filter(l=>l.trim().length);
+      if (!lines.length) return [];
+
+      const header = splitCSVLine(lines[0]).map(h => h.trim());
+      const out = [];
+      for (let i=1;i<lines.length;i++){
+        const parts = splitCSVLine(lines[i]);
+        const obj = {};
+        header.forEach((h, idx) => obj[h] = (parts[idx] ?? "").trim());
+        out.push(obj);
+      }
+      return out;
+    }
+
+    function splitCSVLine(line){
+      const res = [];
+      let cur = "";
+      let inQuotes = false;
+      for (let i=0;i<line.length;i++){
+        const ch = line[i];
+        if (ch === '"'){
+          if (inQuotes && line[i+1] === '"'){ // escaped quote
+            cur += '"'; i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (ch === "," && !inQuotes){
+          res.push(cur); cur="";
+        } else {
+          cur += ch;
+        }
+      }
+      res.push(cur);
+      return res;
+    }
+
+    async function loadDefaultCSV(){
+      try{
+        const r = await fetch(CSV_DEFAULT_PATH, {cache:"no-store"});
+        if(!r.ok) throw new Error("CSV fetch failed");
+        const text = await r.text();
+        onCSVLoaded(text);
+      }catch(e){
+        statusHint.innerHTML = `⚠️ Konnte <code>${CSV_DEFAULT_PATH}</code> nicht automatisch laden. Bitte oben die CSV hochladen.`;
+      }
+    }
+
+    function onCSVLoaded(csvText){
+      rows = parseCSV(csvText);
+
+      // normalize column names (support both: with/without Woche)
+      // Expected columns:
+      // Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
+      rows = rows.map(r => {
+        const w = normalize(r["Woche"]) || "1";
+        const tag = normalize(r["Tag"]) || "";
+        const wtag = normalize(r["Wochentag"]) || "";
+        const mahl = normalize(r["Mahlzeit"]) || "";
+        const food = normalize(r["Lebensmittel"]) || "";
+        const menge = normalize(r["Menge"]) || "";
+        const einh = normalize(r["Einheit"]) || "";
+        const notiz = normalize(r["Notiz"]) || "";
+        return { Woche:w, Tag:tag, Wochentag:wtag, Mahlzeit:mahl, Lebensmittel:food, Menge:menge, Einheit:einh, Notiz:notiz };
+      });
+
+      meals = groupMeals(rows);
+      statusHint.textContent = "✅ CSV geladen. Du kannst jetzt filtern, planen und die Einkaufsliste generieren.";
+      initFilters();
+      renderAll();
+    }
+
+    csvFile.addEventListener("change", async (ev)=>{
+      const file = ev.target.files?.[0];
+      if(!file) return;
+      const text = await file.text();
+      onCSVLoaded(text);
+    });
+
+    /******************************************************************
+     * 2) GROUP INTO MEALS
+     ******************************************************************/
+    function mealKey(m){
+      return `w${m.Woche}-t${m.Tag}-${m.Mahlzeit}`;
+    }
+
+    function groupMeals(dataRows){
+      const map = new Map();
+      for (const r of dataRows){
+        if(!r.Mahlzeit) continue;
+        const key = `w${r.Woche}|t${r.Tag}|${r.Wochentag}|${r.Mahlzeit}`;
+        if(!map.has(key)){
+          map.set(key, {
+            Woche: r.Woche,
+            Tag: r.Tag,
+            Wochentag: r.Wochentag,
+            Mahlzeit: r.Mahlzeit,
+            items: []
+          });
+        }
+        map.get(key).items.push({
+          Lebensmittel: r.Lebensmittel,
+          Menge: r.Menge,
+          Einheit: r.Einheit,
+          Notiz: r.Notiz
+        });
+      }
+      const arr = [...map.values()];
+
+      // Sort: week, day order, meal order
+      arr.sort((a,b)=>{
+        const wa = +a.Woche, wb = +b.Woche;
+        if(wa!==wb) return wa-wb;
+
+        const da = DAY_ORDER.indexOf(a.Wochentag);
+        const db = DAY_ORDER.indexOf(b.Wochentag);
+        if(da!==db) return da-db;
+
+        const ma = MEAL_ORDER.indexOf(a.Mahlzeit);
+        const mb = MEAL_ORDER.indexOf(b.Mahlzeit);
+        return ma-mb;
+      });
+
+      return arr;
+    }
+
+    /******************************************************************
+     * 3) FILTERS
+     ******************************************************************/
+    function uniqueSorted(arr){
+      return [...new Set(arr)].sort((a,b)=>{
+        const na = +a, nb = +b;
+        if(!isNaN(na) && !isNaN(nb)) return na-nb;
+        return String(a).localeCompare(String(b), "de");
+      });
+    }
+
+    function initFilters(){
+      const weeks = uniqueSorted(meals.map(m => m.Woche));
+      const days  = DAY_ORDER.slice();
+      const mealTypes = ["Alle", ...MEAL_ORDER];
+
+      weekFilter.innerHTML = weeks.map(w => `<option value="${w}">Woche ${w}</option>`).join("");
+      dayFilter.innerHTML = [`<option value="Alle">Alle</option>`, ...days.map(d=>`<option value="${d}">${d}</option>`)].join("");
+      mealFilter.innerHTML = mealTypes.map(x => `<option value="${x}">${x}</option>`).join("");
+
+      weekFilter.addEventListener("change", renderAll);
+      dayFilter.addEventListener("change", renderAll);
+      mealFilter.addEventListener("change", renderAll);
+      searchBox.addEventListener("input", renderAll);
+
+      el("resetBtn").addEventListener("click", ()=>{
+        dayFilter.value = "Alle";
+        mealFilter.value = "Alle";
+        searchBox.value = "";
+        renderAll();
+      });
+
+      el("clearPlanBtn").addEventListener("click", ()=>{
+        localStorage.removeItem(STORAGE_KEY);
+        renderAll();
+        showToast("Plan gelöscht ✅");
+      });
+
+      tabPlanned.addEventListener("click", ()=>{
+        shoppingMode = "planned";
+        tabPlanned.classList.add("active");
+        tabWeek.classList.remove("active");
+        renderShopping();
+      });
+
+      tabWeek.addEventListener("click", ()=>{
+        shoppingMode = "week";
+        tabWeek.classList.add("active");
+        tabPlanned.classList.remove("active");
+        renderShopping();
+      });
+
+      el("copyListBtn").addEventListener("click", ()=>{
+        const text = shoppingListToText(getShoppingData());
+        navigator.clipboard.writeText(text).then(()=>showToast("Einkaufsliste kopiert ✅"));
+      });
+
+      el("downloadListBtn").addEventListener("click", ()=>{
+        const csv = shoppingListToCSV(getShoppingData());
+        downloadText("einkaufsliste.csv", csv);
+      });
+    }
+
+    function filterMeals(){
+      const w = weekFilter.value || "1";
+      const d = dayFilter.value;
+      const mt = mealFilter.value;
+      const q = normalize(searchBox.value).toLowerCase();
+
+      return meals.filter(m=>{
+        if (m.Woche !== w) return false;
+        if (d && d !== "Alle" && m.Wochentag !== d) return false;
+        if (mt && mt !== "Alle" && m.Mahlzeit !== mt) return false;
+
+        if (q){
+          // search across foods + notes
+          const hay = [
+            m.Wochentag, m.Mahlzeit,
+            ...m.items.map(x => `${x.Lebensmittel} ${x.Notiz}`)
+          ].join(" ").toLowerCase();
+          if(!hay.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    /******************************************************************
+     * 4) PLANNING (localStorage)
+     ******************************************************************/
+    function getPlannedSet(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if(!raw) return new Set();
+        return new Set(JSON.parse(raw));
+      }catch{
+        return new Set();
+      }
+    }
+    function setPlannedSet(set){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...set]));
+    }
+    function isPlanned(key){
+      return getPlannedSet().has(key);
+    }
+    function togglePlanned(key, checked){
+      const set = getPlannedSet();
+      if(checked) set.add(key);
+      else set.delete(key);
+      setPlannedSet(set);
+      renderShopping();
+      renderKpis();
+    }
+
+    /******************************************************************
+     * 5) RENDER PLAN
+     ******************************************************************/
+    function renderAll(){
+      const filtered = filterMeals();
+      renderPlan(filtered);
+      renderKpis();
+      renderShopping();
+      renderRecipeDropdown();
+    }
+
+    function groupByDay(filteredMeals){
+      const map = new Map();
+      for (const m of filteredMeals){
+        const dayKey = `${m.Tag}|${m.Wochentag}`;
+        if(!map.has(dayKey)){
+          map.set(dayKey, { Tag: m.Tag, Wochentag: m.Wochentag, meals: [] });
+        }
+        map.get(dayKey).meals.push(m);
+      }
+      // keep in correct weekday order
+      const arr = [...map.values()];
+      arr.sort((a,b)=>{
+        const da = DAY_ORDER.indexOf(a.Wochentag);
+        const db = DAY_ORDER.indexOf(b.Wochentag);
+        return da-db;
+      });
+      return arr;
+    }
+
+    function antiInflammatoryBadge(m){
+      // heuristic: anti-inflammatory focus if fish / legumes / lots of vegetables
+      const txt = m.items.map(i => (i.Lebensmittel||"").toLowerCase()).join(" ");
+      const keywords = ["lachs","makrele","hering","forelle","sardinen","kabeljau","thunfisch","linsen","kichererbsen","bohnen","tofu","edamame","brokkoli","spinat","gemüse","salat","quinoa"];
+      const hit = keywords.some(k => txt.includes(k));
+      return hit ? `<span class="badge green">Entzündungshemmend</span>` : `<span class="badge gray">Basis</span>`;
+    }
+
+    function renderPlan(filtered){
+      const w = weekFilter.value || "1";
+      planMeta.textContent = `Woche ${w} • ${filtered.length} Mahlzeiten`;
+
+      if(!filtered.length){
+        planRoot.innerHTML = `<div class="hint">Keine Treffer für diese Filter.</div>`;
+        return;
+      }
+
+      const dayGroups = groupByDay(filtered);
+
+      planRoot.innerHTML = dayGroups.map(g=>{
+        const dayMealsHtml = g.meals.map(m=>{
+          const key = mealKey(m);
+          const planned = isPlanned(key);
+
+          return `
+            <div class="mealRow">
+              <div class="mealType">
+                <span class="badge purple">${m.Mahlzeit}</span>
+                ${antiInflammatoryBadge(m)}
+                <div class="mealActions">
+                  <label class="check">
+                    <input type="checkbox" data-plan-key="${key}" ${planned ? "checked":""}/>
+                    <span class="muted">geplant</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="ingredients">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Lebensmittel</th>
+                      <th>Menge</th>
+                      <th>Einheit</th>
+                      <th>Notiz</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${m.items.map(i=>`
+                      <tr>
+                        <td>${escapeHtml(i.Lebensmittel)}</td>
+                        <td>${escapeHtml(i.Menge)}</td>
+                        <td>${escapeHtml(i.Einheit)}</td>
+                        <td class="muted">${escapeHtml(i.Notiz)}</td>
+                      </tr>
+                    `).join("")}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <div class="dayBlock">
+            <div class="dayHeader">
+              <div class="left">
+                <div class="d">${g.Wochentag}</div>
+                <div class="meta">Tag ${g.Tag}</div>
+              </div>
+              <div class="right">
+                <button class="btn secondary" data-plan-day="${g.Tag}|${g.Wochentag}">Tag komplett planen</button>
+                <button class="btn secondary" data-unplan-day="${g.Tag}|${g.Wochentag}">Tag abwählen</button>
+              </div>
+            </div>
+            ${dayMealsHtml}
+          </div>
+        `;
+      }).join("");
+
+      // Attach checkbox handlers
+      planRoot.querySelectorAll('input[type="checkbox"][data-plan-key]').forEach(cb=>{
+        cb.addEventListener("change", (ev)=>{
+          togglePlanned(ev.target.dataset.planKey, ev.target.checked);
+        });
+      });
+
+      // Day buttons
+      planRoot.querySelectorAll("[data-plan-day]").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const [tag, wtag] = btn.dataset.planDay.split("|");
+          const set = getPlannedSet();
+          for(const m of filtered){
+            if(m.Tag === tag && m.Wochentag === wtag){
+              set.add(mealKey(m));
+            }
+          }
+          setPlannedSet(set);
+          renderAll();
+          showToast("Tag geplant ✅");
+        });
+      });
+
+      planRoot.querySelectorAll("[data-unplan-day]").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const [tag, wtag] = btn.dataset.unplanDay.split("|");
+          const set = getPlannedSet();
+          for(const m of filtered){
+            if(m.Tag === tag && m.Wochentag === wtag){
+              set.delete(mealKey(m));
+            }
+          }
+          setPlannedSet(set);
+          renderAll();
+          showToast("Tag abgewählt ✅");
+        });
+      });
+    }
+
+    function renderKpis(){
+      const filtered = filterMeals();
+      const plannedSet = getPlannedSet();
+
+      kpiMeals.textContent = String(filtered.length);
+
+      const plannedCount = filtered.filter(m => plannedSet.has(mealKey(m))).length;
+      kpiPlanned.textContent = String(plannedCount);
+
+      const dayCount = new Set(filtered.map(m => `${m.Tag}|${m.Wochentag}`)).size;
+      kpiDays.textContent = String(dayCount);
+    }
+
+    /******************************************************************
+     * 6) SHOPPING LIST
+     ******************************************************************/
+    function parseNumericAmount(menge){
+      // Returns { type:"number", value: n } or { type:"range", text:"100-150" } or { type:"text", text:"..." }
+      const s = normalize(menge);
+      if(!s) return {type:"text", text:""};
+
+      // common: "100-150"
+      const rangeMatch = s.match(/^(\d+(?:[.,]\d+)?)\s*-\s*(\d+(?:[.,]\d+)?)$/);
+      if(rangeMatch){
+        return {type:"range", text:s};
+      }
+
+      // common: "0.5" or "180"
+      const numMatch = s.match(/^(\d+(?:[.,]\d+)?)$/);
+      if(numMatch){
+        const v = parseFloat(numMatch[1].replace(",", "."));
+        if(!isNaN(v)) return {type:"number", value:v};
+      }
+
+      // "2-3" "2–3" maybe
+      const range2 = s.match(/^(\d+)\s*[–-]\s*(\d+)$/);
+      if(range2){
+        return {type:"range", text:s};
+      }
+
+      return {type:"text", text:s};
+    }
+
+    function getMealsForShopping(){
+      const filtered = filterMeals();
+      if(shoppingMode === "week"){
+        // all meals in current week (ignoring day/meal filters? user wants whole week)
+        // We'll take all meals of week, regardless of dayFilter/mealFilter/search:
+        const w = weekFilter.value || "1";
+        return meals.filter(m => m.Woche === w);
+      }
+
+      // planned mode: only checked meals within current week
+      const set = getPlannedSet();
+      const w = weekFilter.value || "1";
+      return meals.filter(m => m.Woche === w && set.has(mealKey(m)));
+    }
+
+    function getShoppingData(){
+      const selectedMeals = getMealsForShopping();
+      const map = new Map();
+
+      for(const m of selectedMeals){
+        for(const it of m.items){
+          const name = normalize(it.Lebensmittel);
+          if(!name) continue;
+
+          const unit = normalize(it.Einheit);
+          const note = normalize(it.Notiz);
+
+          const amountParsed = parseNumericAmount(it.Menge);
+
+          // key by (name + unit). if no unit, keep separate
+          const k = `${name}__${unit}`;
+
+          if(!map.has(k)){
+            map.set(k, {
+              Lebensmittel: name,
+              Einheit: unit,
+              total: 0,
+              hasNumber: false,
+              hasText: false,
+              texts: new Set(),
+              notes: new Set()
+            });
+          }
+
+          const entry = map.get(k);
+
+          if(note) entry.notes.add(note);
+
+          if(amountParsed.type === "number"){
+            entry.total += amountParsed.value;
+            entry.hasNumber = true;
+          }else if(amountParsed.type === "range"){
+            entry.hasText = true;
+            entry.texts.add(amountParsed.text + (unit ? " " + unit : ""));
+          }else{
+            if(amountParsed.text) {
+              entry.hasText = true;
+              entry.texts.add(amountParsed.text + (unit ? " " + unit : ""));
+            }
+          }
+        }
+      }
+
+      // finalize + sort
+      const out = [...map.values()].map(e=>{
+        let qtyText = "";
+        if(e.hasNumber && !e.hasText){
+          qtyText = formatNumber(e.total) + (e.Einheit ? " " + e.Einheit : "");
+        } else if(e.hasNumber && e.hasText){
+          qtyText = formatNumber(e.total) + (e.Einheit ? " " + e.Einheit : "") + " + " + [...e.texts].join(" / ");
+        } else {
+          qtyText = [...e.texts].join(" / ") || (e.Einheit ? ("— " + e.Einheit) : "—");
+        }
+
+        return {
+          Lebensmittel: e.Lebensmittel,
+          MengeText: qtyText.trim(),
+          Einheit: e.Einheit,
+          Notiz: [...e.notes].join("; ")
+        };
+      });
+
+      out.sort((a,b)=>a.Lebensmittel.localeCompare(b.Lebensmittel,"de"));
+      return out;
+    }
+
+    function formatNumber(n){
+      // keep 1 decimal max if needed
+      const rounded = Math.round(n*10)/10;
+      return (Number.isInteger(rounded) ? String(rounded) : String(rounded).replace(".", ","));
+    }
+
+    function renderShopping(){
+      const data = getShoppingData();
+
+      if(!data.length){
+        shoppingRoot.innerHTML = `<div class="hint">Noch keine Einträge. Plane Mahlzeiten (Checkbox) oder wechsel auf „Gesamte Woche“.</div>`;
+        return;
+      }
+
+      shoppingRoot.innerHTML = data.map(x=>`
+        <div class="listItem">
+          <div>
+            <div class="name">${escapeHtml(x.Lebensmittel)}</div>
+            <div class="meta">${escapeHtml(x.Notiz || "")}</div>
+          </div>
+          <div class="qty">${escapeHtml(x.MengeText)}</div>
+        </div>
+      `).join("");
+    }
+
+    function shoppingListToText(data){
+      return data.map(x=>{
+        const note = x.Notiz ? ` (${x.Notiz})` : "";
+        return `- ${x.Lebensmittel}: ${x.MengeText}${note}`;
+      }).join("\n");
+    }
+
+    function shoppingListToCSV(data){
+      const header = ["Lebensmittel","Menge","Notiz"].join(",");
+      const lines = data.map(x=>{
+        return [
+          csvEscape(x.Lebensmittel),
+          csvEscape(x.MengeText),
+          csvEscape(x.Notiz || "")
+        ].join(",");
+      });
+      return [header, ...lines].join("\n");
+    }
+
+    function csvEscape(s){
+      const v = String(s ?? "");
+      if(v.includes(",") || v.includes('"') || v.includes("\n")){
+        return `"${v.replace(/"/g,'""')}"`;
+      }
+      return v;
+    }
+
+    function downloadText(filename, text){
+      const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showToast("Export erstellt ✅");
+    }
+
+    /******************************************************************
+     * 7) RECIPES DROPDOWN (detailed prep steps)
+     ******************************************************************/
+    const recipeSelect  = el("recipeSelect");
+    const recipeContent = el("recipeContent");
+
+    const RECIPES = [
+      {
+        id:"ofenlachs",
+        title:"Ofenlachs + Kartoffeln + Brokkoli (Omega-3)",
+        tag:"Entzündungshemmend",
+        time:"25–35 Min",
+        steps:[
+          "Backofen auf 200°C Ober-/Unterhitze vorheizen (oder 180°C Umluft).",
+          "Kartoffeln waschen, in Stücke schneiden. Mit 1 EL Olivenöl + Prise Salz mischen und 20–25 Min backen.",
+          "Lachsfilet trocken tupfen. Mit Zitronensaft, 1 TL Olivenöl, mildem Pfeffer, optional Dill würzen.",
+          "Brokkoli in Röschen teilen. In den letzten 10–12 Min mit aufs Blech geben (oder 5–6 Min dämpfen).",
+          "Lachs 12–15 Min garen (je nach Dicke). Nicht zu lange → bleibt saftig.",
+          "Alles zusammen servieren. Optional: extra Zitronensaft + 1 TL Olivenöl über Brokkoli."
+        ]
+      },
+      {
+        id:"linsensalat",
+        title:"Linsensalat (Zink/Folat + Ballaststoffe)",
+        tag:"Entzündungshemmend",
+        time:"15–20 Min",
+        steps:[
+          "Gekochte Linsen (oder vorgekochte) abspülen und abtropfen lassen.",
+          "Paprika, Gurke, Tomate klein würfeln.",
+          "Dressing: 1 EL Olivenöl + Zitronensaft + Prise Salz, optional Kräuter (Petersilie).",
+          "Alles mischen und 10 Min ziehen lassen.",
+          "Optional: Feta darüber bröseln.",
+          "Tipp: Wenn du sehr empfindlich reagierst, Gemüse kurz blanchieren oder geschält verwenden."
+        ]
+      },
+      {
+        id:"kichererbsencurry",
+        title:"Kichererbsen-Curry (mild) + Reis",
+        tag:"Entzündungshemmend",
+        time:"20–25 Min",
+        steps:[
+          "Reis aufsetzen (ca. 10–15 Min, je nach Sorte).",
+          "In einem Topf 1 TL Olivenöl erhitzen, Zwiebel (optional) glasig dünsten.",
+          "Gemüse (z. B. Zucchini, Paprika, Karotte) dazugeben und 5–7 Min sanft garen.",
+          "Kichererbsen zugeben, dann 100–150 ml Kokosmilch light einrühren.",
+          "Mild würzen: Kurkuma + etwas Ingwer (optional) + Salz. Kein scharfes Chili.",
+          "5–8 Min köcheln lassen. Konsistenz mit Wasser anpassen.",
+          "Mit Reis servieren. Optional: frischer Zitronensaft am Ende."
+        ]
+      },
+      {
+        id:"chili_sin_carne",
+        title:"Chili sin carne (Kidneybohnen + Mais) – mild",
+        tag:"Entzündungshemmend",
+        time:"25–35 Min",
+        steps:[
+          "Zwiebel (optional) in 1 TL Olivenöl glasig dünsten.",
+          "Tomate + Paprika klein schneiden und 5 Min mitdünsten.",
+          "Kidneybohnen + Mais zugeben. Mit passierten Tomaten oder etwas Wasser ablöschen.",
+          "Mild würzen: Kreuzkümmel, Paprikapulver edelsüß, Salz. Scharfes weglassen.",
+          "15–20 Min köcheln lassen.",
+          "Optional: 2–3 EL Naturjoghurt oben drauf (kühlt & macht mild)."
+        ]
+      },
+      {
+        id:"omelett_spinat",
+        title:"Omelett/Rührei mit Spinat (schnell & nährstoffreich)",
+        tag:"Entzündungshemmend",
+        time:"10–12 Min",
+        steps:[
+          "2–3 Eier mit Prise Salz verquirlen.",
+          "Spinat in der Pfanne mit wenig Olivenöl kurz zusammenfallen lassen.",
+          "Eimasse dazugeben, bei mittlerer Hitze stocken lassen.",
+          "Optional Tomaten dazu. Nicht zu stark bräunen.",
+          "Mit Vollkornbrot servieren."
+        ]
+      },
+      {
+        id:"overnight_oats",
+        title:"Overnight Oats (Ballaststoffe + stabile Energie)",
+        tag:"Entzündungshemmend",
+        time:"5 Min + Kühlschrank",
+        steps:[
+          "70–80 g Haferflocken in eine Schüssel/Glas geben.",
+          "250 ml Milch oder Haferdrink dazu, 1 EL Leinsamen/Chia einrühren.",
+          "Obst (Beeren / Birne / Apfel) oben drauf.",
+          "Mind. 4 Stunden (besser über Nacht) im Kühlschrank ziehen lassen.",
+          "Optional: Skyr/Joghurt kurz vor dem Essen dazugeben für extra Protein."
+        ]
+      },
+      {
+        id:"gemuesepfanne_huhn",
+        title:"Gemüsepfanne + Hähnchen + Reis (mild)",
+        tag:"Entzündungshemmend",
+        time:"20–25 Min",
+        steps:[
+          "Reis garen (200–250 g gekocht).",
+          "Hähnchenbrust würfeln. In 1 TL Olivenöl bei mittlerer Hitze durchgaren.",
+          "Gemüse (Zucchini, Paprika) dazugeben und 6–8 Min mitbraten.",
+          "Mild würzen: Salz, Petersilie, etwas Zitronensaft.",
+          "Reis unterheben oder separat servieren."
+        ]
+      },
+      {
+        id:"bowl_tofu_quinoa",
+        title:"Bowl: Tofu + Quinoa + Gemüse (viel Magnesium/Zink)",
+        tag:"Entzündungshemmend",
+        time:"20–25 Min",
+        steps:[
+          "Quinoa kochen (ca. 15 Min).",
+          "Tofu würfeln, mit 1 TL Olivenöl sanft anbraten oder im Ofen backen.",
+          "Gemüse roh oder gedünstet vorbereiten (300 g).",
+          "Alles in eine Bowl, 1 EL Olivenöl + Zitronensaft als Dressing.",
+          "Optional: 1 EL Sesam oder Kürbiskerne drüber (ohne Walnüsse/Paranüsse)."
+        ]
+      },
+      {
+        id:"makrele_suesskartoffel",
+        title:"Makrele + Süßkartoffel + Salat (Omega-3 + Beta-Carotin)",
+        tag:"Entzündungshemmend",
+        time:"25–30 Min",
+        steps:[
+          "Süßkartoffel würfeln, mit 1 EL Olivenöl mischen, bei 200°C ca. 20–25 Min backen.",
+          "Makrele (oder anderer Fisch) in der Pfanne kurz erwärmen oder im Ofen 10–12 Min garen.",
+          "Salat mit 1 EL Olivenöl + Zitronensaft anmachen.",
+          "Alles zusammen servieren. Tipp: Fisch nicht „totbraten“, sonst wird er trocken."
+        ]
+      },
+      {
+        id:"gemuesesuppe",
+        title:"Gemüsesuppe (schonend, gut bei sehr empfindlicher Haut)",
+        tag:"Entzündungshemmend",
+        time:"25–35 Min",
+        steps:[
+          "Gemüse (z. B. Karotte, Zucchini, Kartoffel, Brokkoli) klein schneiden.",
+          "In Topf mit Wasser/leichter Brühe geben, 20–25 Min köcheln lassen.",
+          "Mit 1 TL Olivenöl verfeinern, mild salzen.",
+          "Optional: Hüttenkäse als Proteinbeilage dazu essen."
+        ]
+      },
+      {
+        id:"pancakes_hafer",
+        title:"Hafer-Pancakes (ohne Zucker, proteinfreundlich)",
+        tag:"Entzündungshemmend",
+        time:"15–20 Min",
+        steps:[
+          "60 g Haferflocken (oder gemahlen) + 2 Eier + 1 Banane zu Teig mixen.",
+          "Pfanne mit minimal Öl (oder beschichtet) erhitzen.",
+          "Kleine Pancakes bei mittlerer Hitze ausbacken (je Seite 2–3 Min).",
+          "Mit Naturjoghurt und Beeren servieren."
+        ]
+      }
+    ];
+
+    function renderRecipeDropdown(){
+      // Fill select once
+      if(recipeSelect.options.length > 1) return;
+
+      for(const r of RECIPES){
+        const opt = document.createElement("option");
+        opt.value = r.id;
+        opt.textContent = `${r.title} • ${r.time}`;
+        recipeSelect.appendChild(opt);
+      }
+
+      recipeSelect.addEventListener("change", ()=>{
+        const id = recipeSelect.value;
+        if(!id){
+          recipeContent.classList.remove("show");
+          recipeContent.innerHTML = "";
+          return;
+        }
+        const r = RECIPES.find(x=>x.id===id);
+        recipeContent.innerHTML = `
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <div style="font-weight:850;font-size:16px">${escapeHtml(r.title)}</div>
+            <span class="chip">${escapeHtml(r.tag)} • ${escapeHtml(r.time)}</span>
+          </div>
+          <div style="height:10px"></div>
+          <ol>${r.steps.map(s=>`<li>${escapeHtml(s)}</li>`).join("")}</ol>
+        `;
+        recipeContent.classList.add("show");
+      });
+    }
+
+    /******************************************************************
+     * 8) UTILS
+     ******************************************************************/
+    function escapeHtml(s){
+      return String(s ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+    }
+
+    /******************************************************************
+     * BOOT
+     ******************************************************************/
+    loadDefaultCSV();
+  </script>
+</body>
+</html>

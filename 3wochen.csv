@@ -1,0 +1,302 @@
+Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
+1,1,Montag,Frühstück,Haferflocken,80,g,
+1,1,Montag,Frühstück,Joghurt/Skyr,250,g,Alternative: Soja-Joghurt + extra Protein
+1,1,Montag,Frühstück,Beeren,150,g,
+1,1,Montag,Frühstück,Chiasamen,1,EL,entspricht ca. 10-15 g
+1,1,Montag,Snack,Apfel,1,Stück,
+1,1,Montag,Snack,Kürbiskerne,2,EL,Alternative: Sonnenblumenkerne
+1,1,Montag,Mittag,Gekochte Linsen,200,g,Linsensalat
+1,1,Montag,Mittag,Paprika/Gurke/Tomate,300,g,
+1,1,Montag,Mittag,Olivenöl,1,EL,
+1,1,Montag,Mittag,Zitronensaft,,,nach Geschmack
+1,1,Montag,Mittag,Feta,40,g,optional
+1,1,Montag,Abend,Ofenlachs,180,g,
+1,1,Montag,Abend,Kartoffeln,300,g,
+1,1,Montag,Abend,Brokkoli,250,g,
+1,1,Montag,Abend,Olivenöl,1,EL,über Gemüse
+
+1,2,Dienstag,Frühstück,Eier,3,Stück,Omelett oder Rührei
+1,2,Dienstag,Frühstück,Spinat,100-150,g,
+1,2,Dienstag,Frühstück,Tomaten,,,nach Bedarf
+1,2,Dienstag,Frühstück,Vollkornbrot,60-80,g,1 Scheibe
+1,2,Dienstag,Snack,Karotten,200,g,
+1,2,Dienstag,Snack,Hummus,50-70,g,
+1,2,Dienstag,Mittag,Hähnchenbrust,180,g,
+1,2,Dienstag,Mittag,Reis (gekocht),200-250,g,
+1,2,Dienstag,Mittag,Gemüsepfanne,300,g,z. B. Zucchini + Paprika
+1,2,Dienstag,Abend,Quark/Skyr,300,g,
+1,2,Dienstag,Abend,Banane,1,Stück,
+1,2,Dienstag,Abend,Haferflocken,40,g,
+1,2,Dienstag,Abend,Zimt,,,optional (wenn verträglich)
+
+1,3,Mittwoch,Frühstück,Haferflocken,70,g,Overnight Oats
+1,3,Mittwoch,Frühstück,Milch/Haferdrink,250,ml,
+1,3,Mittwoch,Frühstück,Birne,1,Stück,
+1,3,Mittwoch,Frühstück,Leinsamen,1,EL,
+1,3,Mittwoch,Snack,Edamame,150,g,Alternative: 1 Proteinshake
+1,3,Mittwoch,Mittag,Vollkornnudeln (gekocht),250,g,
+1,3,Mittwoch,Mittag,Tomatensauce + Gemüse,300,g,
+1,3,Mittwoch,Mittag,Thunfisch,1,Dose,Option A
+1,3,Mittwoch,Mittag,Tofu,200,g,Option B
+1,3,Mittwoch,Abend,Kidneybohnen,200,g,Chili sin carne
+1,3,Mittwoch,Abend,Mais,100,g,
+1,3,Mittwoch,Abend,Tomate + Paprika + Zwiebel,300,g,
+1,3,Mittwoch,Abend,Naturjoghurt,2-3,EL,optional
+
+1,4,Donnerstag,Frühstück,Skyr,250,g,
+1,4,Donnerstag,Frühstück,Kiwi,2,Stück,
+1,4,Donnerstag,Frühstück,Haferflocken,50-60,g,
+1,4,Donnerstag,Frühstück,Sonnenblumenkerne,1,EL,
+1,4,Donnerstag,Snack,Käse,40-60,g,1-2 Scheiben
+1,4,Donnerstag,Snack,Gurke/Tomaten,,,nach Bedarf
+1,4,Donnerstag,Mittag,Rinderhack oder Rinderstreifen,150-180,g,
+1,4,Donnerstag,Mittag,Süßkartoffel,300,g,
+1,4,Donnerstag,Mittag,Salat,250,g,
+1,4,Donnerstag,Mittag,Olivenöl,1,EL,
+1,4,Donnerstag,Abend,Gemüsesuppe,600-800,ml,große Schüssel
+1,4,Donnerstag,Abend,Vollkornbrot,60-80,g,
+1,4,Donnerstag,Abend,Hüttenkäse,150,g,optional
+
+1,5,Freitag,Frühstück,Vollkornbrot,2,Scheiben,
+1,5,Freitag,Frühstück,Avocado,0.5,Stück,½ Avocado
+1,5,Freitag,Frühstück,Eier,2,Stück,
+1,5,Freitag,Snack,Beeren,150,g,
+1,5,Freitag,Snack,Joghurt,150,g,
+1,5,Freitag,Mittag,Tofu,200,g,Bowl Option A
+1,5,Freitag,Mittag,Fisch oder Hähnchen,200,g,Bowl Option B
+1,5,Freitag,Mittag,Quinoa (gekocht),200,g,
+1,5,Freitag,Mittag,Gemüse,300,g,
+1,5,Freitag,Mittag,Olivenöl,1,EL,
+1,5,Freitag,Abend,Hering oder Makrele,180,g,
+1,5,Freitag,Abend,Kartoffeln,250-300,g,
+1,5,Freitag,Abend,Gurkensalat,200,g,
+
+1,6,Samstag,Frühstück,Haferflocken,60,g,Pancakes Zutaten
+1,6,Samstag,Frühstück,Eier,2,Stück,Pancakes Zutaten
+1,6,Samstag,Frühstück,Banane,1,Stück,Pancakes Zutaten
+1,6,Samstag,Frühstück,Naturjoghurt,150,g,
+1,6,Samstag,Snack,Orange,1,Stück,
+1,6,Samstag,Snack,Kürbiskerne,2,EL,Alternative: Tahin aufs Brot
+1,6,Samstag,Mittag,Kichererbsen,200,g,Kichererbsen-Curry
+1,6,Samstag,Mittag,Kokosmilch light,100-150,ml,
+1,6,Samstag,Mittag,Gemüse,300,g,
+1,6,Samstag,Mittag,Reis (gekocht),200,g,
+1,6,Samstag,Abend,Putenbrust,180,g,
+1,6,Samstag,Abend,Gemüse aus dem Ofen,350,g,
+1,6,Samstag,Abend,Olivenöl,1,EL,
+
+1,7,Sonntag,Frühstück,Haferflocken,70,g,Müsli
+1,7,Sonntag,Frühstück,Joghurt/Skyr,250,g,
+1,7,Sonntag,Frühstück,Apfel,1,Stück,
+1,7,Sonntag,Frühstück,Chia oder Leinsamen,1,EL,
+1,7,Sonntag,Snack,Hummus,70,g,
+1,7,Sonntag,Snack,Paprika/Gurke,250,g,
+1,7,Sonntag,Mittag,Ofenlachs oder Forelle,180,g,
+1,7,Sonntag,Mittag,Vollkornreis (gekocht),250,g,
+1,7,Sonntag,Mittag,Gemischtes Gemüse,300,g,
+1,7,Sonntag,Abend,Eier,2-3,Stück,Schnell & leicht
+1,7,Sonntag,Abend,Spinat,,,nach Bedarf
+1,7,Sonntag,Abend,Brot,60-80,g,1 Scheibe
+1,7,Sonntag,Abend,Obst (Portion nach Wahl),1,Portion,
+
+2,1,Montag,Frühstück,Haferflocken,70,g,
+2,1,Montag,Frühstück,Milch/Haferdrink,250,ml,
+2,1,Montag,Frühstück,Apfel,1,Stück,
+2,1,Montag,Frühstück,Chiasamen,1,EL,
+2,1,Montag,Snack,Birne,1,Stück,
+2,1,Montag,Snack,Sonnenblumenkerne,2,EL,
+2,1,Montag,Mittag,Sardinen (Dose),120,g,
+2,1,Montag,Mittag,Kartoffeln,250,g,
+2,1,Montag,Mittag,Grüne Bohnen,250,g,
+2,1,Montag,Mittag,Olivenöl,1,EL,
+2,1,Montag,Abend,Putenhack,180,g,
+2,1,Montag,Abend,Couscous (gekocht),250,g,
+2,1,Montag,Abend,Ofengemüse,300,g,
+2,1,Montag,Abend,Olivenöl,1,EL,
+
+2,2,Dienstag,Frühstück,Skyr,300,g,
+2,2,Dienstag,Frühstück,Banane,1,Stück,
+2,2,Dienstag,Frühstück,Haferflocken,40,g,
+2,2,Dienstag,Frühstück,Leinsamen,1,EL,
+2,2,Dienstag,Snack,Karotten,200,g,
+2,2,Dienstag,Snack,Tzatziki,70,g,
+2,2,Dienstag,Mittag,Kichererbsen,200,g,Salat/Bowl
+2,2,Dienstag,Mittag,Quinoa (gekocht),200,g,
+2,2,Dienstag,Mittag,Gemüse,300,g,
+2,2,Dienstag,Mittag,Olivenöl,1,EL,
+2,2,Dienstag,Abend,Rindfleisch (mager),180,g,
+2,2,Dienstag,Abend,Reis (gekocht),220,g,
+2,2,Dienstag,Abend,Brokkoli,250,g,
+2,2,Dienstag,Abend,Olivenöl,1,EL,
+
+2,3,Mittwoch,Frühstück,Eier,2,Stück,
+2,3,Mittwoch,Frühstück,Vollkornbrot,2,Scheiben,gesamt ca. 120 g
+2,3,Mittwoch,Frühstück,Avocado,0.5,Stück,
+2,3,Mittwoch,Frühstück,Tomaten,,,nach Bedarf
+2,3,Mittwoch,Snack,Beeren,200,g,
+2,3,Mittwoch,Snack,Joghurt,150,g,
+2,3,Mittwoch,Mittag,Linsensuppe,700,ml,
+2,3,Mittwoch,Mittag,Vollkornbrot,60,g,
+2,3,Mittwoch,Mittag,Hüttenkäse,150,g,
+2,3,Mittwoch,Abend,Makrele,180,g,
+2,3,Mittwoch,Abend,Süßkartoffel,300,g,
+2,3,Mittwoch,Abend,Salat,250,g,
+2,3,Mittwoch,Abend,Olivenöl,1,EL,
+
+2,4,Donnerstag,Frühstück,Joghurt (griechisch oder Skyr),250,g,
+2,4,Donnerstag,Frühstück,Beeren,200,g,
+2,4,Donnerstag,Frühstück,Haferflocken,50,g,
+2,4,Donnerstag,Frühstück,Kürbiskerne,1,EL,
+2,4,Donnerstag,Snack,Edamame,150,g,
+2,4,Donnerstag,Mittag,Hähnchenbrust,180,g,
+2,4,Donnerstag,Mittag,Kartoffeln,300,g,
+2,4,Donnerstag,Mittag,Spinat,200,g,
+2,4,Donnerstag,Mittag,Olivenöl,1,EL,
+2,4,Donnerstag,Abend,Vollkornnudeln (gekocht),250,g,
+2,4,Donnerstag,Abend,Tomatensauce + Gemüse,300,g,
+2,4,Donnerstag,Abend,Mozzarella,60,g,
+
+2,5,Freitag,Frühstück,Haferflocken,70,g,Overnight Oats
+2,5,Freitag,Frühstück,Kefir oder Milch,250,ml,
+2,5,Freitag,Frühstück,Kiwi,2,Stück,
+2,5,Freitag,Frühstück,Chiasamen,1,EL,
+2,5,Freitag,Snack,Apfel,1,Stück,
+2,5,Freitag,Snack,Hummus,70,g,
+2,5,Freitag,Snack,Gurke,150,g,
+2,5,Freitag,Mittag,Tofu,200,g,
+2,5,Freitag,Mittag,Reis (gekocht),250,g,
+2,5,Freitag,Mittag,Gemüsepfanne,300,g,
+2,5,Freitag,Mittag,Sesam,1,EL,optional
+2,5,Freitag,Abend,Forelle,180,g,
+2,5,Freitag,Abend,Quinoa (gekocht),220,g,
+2,5,Freitag,Abend,Grünes Gemüse (z. B. Spargel),250,g,
+2,5,Freitag,Abend,Olivenöl,1,EL,
+
+2,6,Samstag,Frühstück,Eier,3,Stück,Omelett oder Rührei
+2,6,Samstag,Frühstück,Pilze,150,g,
+2,6,Samstag,Frühstück,Spinat,100,g,
+2,6,Samstag,Frühstück,Vollkornbrot,60,g,1 Scheibe
+2,6,Samstag,Snack,Orange,1,Stück,
+2,6,Samstag,Snack,Kürbiskerne,2,EL,
+2,6,Samstag,Mittag,Putenhack,180,g,Chili
+2,6,Samstag,Mittag,Kidneybohnen,200,g,
+2,6,Samstag,Mittag,Tomaten + Paprika + Zwiebel,300,g,
+2,6,Samstag,Mittag,Reis (gekocht),200,g,
+2,6,Samstag,Abend,Quark/Skyr,300,g,
+2,6,Samstag,Abend,Beeren,150,g,
+2,6,Samstag,Abend,Haferflocken,40,g,
+
+2,7,Sonntag,Frühstück,Haferflocken,70,g,Müsli
+2,7,Sonntag,Frühstück,Joghurt/Skyr,250,g,
+2,7,Sonntag,Frühstück,Apfel,1,Stück,
+2,7,Sonntag,Frühstück,Leinsamen,1,EL,
+2,7,Sonntag,Snack,Käse,50,g,
+2,7,Sonntag,Snack,Trauben,150,g,
+2,7,Sonntag,Mittag,Kabeljau (Ofen),200,g,
+2,7,Sonntag,Mittag,Kartoffeln,300,g,
+2,7,Sonntag,Mittag,Gemischtes Gemüse,300,g,
+2,7,Sonntag,Mittag,Olivenöl,1,EL,
+2,7,Sonntag,Abend,Rote Linsen (gekocht),200,g,Curry
+2,7,Sonntag,Abend,Kokosmilch light,150,ml,
+2,7,Sonntag,Abend,Gemüse,300,g,
+2,7,Sonntag,Abend,Reis (gekocht),200,g,
+
+3,1,Montag,Frühstück,Haferflocken,80,g,
+3,1,Montag,Frühstück,Skyr,200,g,
+3,1,Montag,Frühstück,Beeren,150,g,
+3,1,Montag,Frühstück,Chiasamen,1,EL,
+3,1,Montag,Snack,Banane,1,Stück,
+3,1,Montag,Snack,Sonnenblumenkerne,2,EL,
+3,1,Montag,Mittag,Hähnchenbrust,180,g,
+3,1,Montag,Mittag,Vollkornreis (gekocht),250,g,
+3,1,Montag,Mittag,Gemüse,300,g,
+3,1,Montag,Mittag,Olivenöl,1,EL,
+3,1,Montag,Abend,Hering,180,g,
+3,1,Montag,Abend,Kartoffeln,300,g,
+3,1,Montag,Abend,Gurkensalat,200,g,
+
+3,2,Dienstag,Frühstück,Eier,2,Stück,
+3,2,Dienstag,Frühstück,Hüttenkäse,150,g,
+3,2,Dienstag,Frühstück,Vollkornbrot,80,g,
+3,2,Dienstag,Frühstück,Tomaten,,,nach Bedarf
+3,2,Dienstag,Snack,Edamame,150,g,
+3,2,Dienstag,Mittag,Vollkornnudeln (gekocht),250,g,
+3,2,Dienstag,Mittag,Spinat,200,g,
+3,2,Dienstag,Mittag,Olivenöl,1,EL,
+3,2,Dienstag,Mittag,Parmesan,20,g,optional
+3,2,Dienstag,Abend,Tofu,200,g,Curry
+3,2,Dienstag,Abend,Kichererbsen,150,g,
+3,2,Dienstag,Abend,Gemüse,300,g,
+3,2,Dienstag,Abend,Reis (gekocht),200,g,
+
+3,3,Mittwoch,Frühstück,Skyr,300,g,
+3,3,Mittwoch,Frühstück,Haferflocken,50,g,
+3,3,Mittwoch,Frühstück,Kiwi,2,Stück,
+3,3,Mittwoch,Snack,Karotten,200,g,
+3,3,Mittwoch,Snack,Hummus,70,g,
+3,3,Mittwoch,Mittag,Sardinen (Dose),120,g,
+3,3,Mittwoch,Mittag,Quinoa (gekocht),220,g,
+3,3,Mittwoch,Mittag,Salat,250,g,
+3,3,Mittwoch,Mittag,Olivenöl,1,EL,
+3,3,Mittwoch,Abend,Rinderstreifen,180,g,
+3,3,Mittwoch,Abend,Süßkartoffel,300,g,
+3,3,Mittwoch,Abend,Brokkoli,250,g,
+
+3,4,Donnerstag,Frühstück,Milch/Haferdrink,300,ml,Smoothie
+3,4,Donnerstag,Frühstück,Haferflocken,50,g,Smoothie
+3,4,Donnerstag,Frühstück,Beeren,150,g,Smoothie
+3,4,Donnerstag,Frühstück,Leinsamen,1,EL,Smoothie
+3,4,Donnerstag,Snack,Apfel,1,Stück,
+3,4,Donnerstag,Snack,Kürbiskerne,2,EL,
+3,4,Donnerstag,Mittag,Putenbrust,180,g,
+3,4,Donnerstag,Mittag,Kartoffeln,300,g,
+3,4,Donnerstag,Mittag,Gemüse,300,g,
+3,4,Donnerstag,Mittag,Olivenöl,1,EL,
+3,4,Donnerstag,Abend,Gemüsesuppe,700,ml,
+3,4,Donnerstag,Abend,Vollkornbrot,80,g,
+3,4,Donnerstag,Abend,Joghurt (natur),150,g,
+
+3,5,Freitag,Frühstück,Haferflocken,60,g,Pancakes Zutaten
+3,5,Freitag,Frühstück,Eier,2,Stück,Pancakes Zutaten
+3,5,Freitag,Frühstück,Banane,1,Stück,Pancakes Zutaten
+3,5,Freitag,Frühstück,Naturjoghurt,150,g,
+3,5,Freitag,Snack,Trauben,200,g,
+3,5,Freitag,Snack,Käse,40,g,
+3,5,Freitag,Mittag,Ofenlachs,180,g,
+3,5,Freitag,Mittag,Reis (gekocht),250,g,
+3,5,Freitag,Mittag,Spinat,250,g,
+3,5,Freitag,Mittag,Olivenöl,1,EL,
+3,5,Freitag,Abend,Kichererbsen,200,g,Salat
+3,5,Freitag,Abend,Gemüse,350,g,
+3,5,Freitag,Abend,Feta,40,g,optional
+3,5,Freitag,Abend,Olivenöl,1,EL,
+
+3,6,Samstag,Frühstück,Haferflocken,70,g,Overnight Oats
+3,6,Samstag,Frühstück,Kefir oder Milch,250,ml,
+3,6,Samstag,Frühstück,Beeren,150,g,
+3,6,Samstag,Frühstück,Chiasamen,1,EL,
+3,6,Samstag,Snack,Orange,1,Stück,
+3,6,Samstag,Snack,Knäckebrot,2,Stück,gesamt ca. 30 g
+3,6,Samstag,Snack,Tahin,1,EL,aufs Knäckebrot
+3,6,Samstag,Mittag,Hähnchenbrust,180,g,
+3,6,Samstag,Mittag,Quinoa (gekocht),220,g,
+3,6,Samstag,Mittag,Gemüse,300,g,
+3,6,Samstag,Mittag,Olivenöl,1,EL,
+3,6,Samstag,Abend,Makrele,180,g,
+3,6,Samstag,Abend,Kartoffeln,300,g,
+3,6,Samstag,Abend,Salat,250,g,
+
+3,7,Sonntag,Frühstück,Haferflocken,70,g,Müsli
+3,7,Sonntag,Frühstück,Joghurt/Skyr,250,g,
+3,7,Sonntag,Frühstück,Birne,1,Stück,
+3,7,Sonntag,Frühstück,Leinsamen,1,EL,
+3,7,Sonntag,Snack,Joghurt,150,g,
+3,7,Sonntag,Snack,Beeren,150,g,
+3,7,Sonntag,Mittag,Linsen (gekocht),200,g,Curry
+3,7,Sonntag,Mittag,Kokosmilch light,150,ml,
+3,7,Sonntag,Mittag,Gemüse,300,g,
+3,7,Sonntag,Mittag,Reis (gekocht),200,g,
+3,7,Sonntag,Abend,Eier,3,Stück,Omelett
+3,7,Sonntag,Abend,Spinat,150,g,
+3,7,Sonntag,Abend,Brot,60,g,1 Scheibe
+3,7,Sonntag,Abend,Obst (Portion nach Wahl),1,Portion,
