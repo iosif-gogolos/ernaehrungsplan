@@ -4,7 +4,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 1,1,Montag,Frühstück,Beeren,150,g,
 1,1,Montag,Frühstück,Chiasamen,1,EL,entspricht ca. 10-15 g
 1,1,Montag,Snack,Apfel,1,Stück,
-1,1,Montag,Snack,Kürbiskerne,2,EL,Alternative: Sonnenblumenkerne
+1,1,Montag,Snack,Kürbiskerne,2,EL,Alternativen (statt Kürbiskerne): Mandeln 20-30 g ODER Cashews 20-30 g
+1,1,Montag,Snack,Mandeln,20-30,g,Alternative zu Kürbiskernen
+1,1,Montag,Snack,Cashews,20-30,g,Alternative zu Kürbiskernen
 1,1,Montag,Mittag,Gekochte Linsen,200,g,Linsensalat
 1,1,Montag,Mittag,Paprika/Gurke/Tomate,300,g,
 1,1,Montag,Mittag,Olivenöl,1,EL,
@@ -46,7 +48,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 1,4,Donnerstag,Frühstück,Skyr,250,g,
 1,4,Donnerstag,Frühstück,Kiwi,2,Stück,
 1,4,Donnerstag,Frühstück,Haferflocken,50-60,g,
-1,4,Donnerstag,Frühstück,Sonnenblumenkerne,1,EL,
+1,4,Donnerstag,Frühstück,Sonnenblumenkerne,1,EL,Alternativen: Mandeln 15-20 g ODER Cashews 15-20 g
+1,4,Donnerstag,Frühstück,Mandeln,15-20,g,Alternative zu Sonnenblumenkernen
+1,4,Donnerstag,Frühstück,Cashews,15-20,g,Alternative zu Sonnenblumenkernen
 1,4,Donnerstag,Snack,Käse,40-60,g,1-2 Scheiben
 1,4,Donnerstag,Snack,Gurke/Tomaten,,,nach Bedarf
 1,4,Donnerstag,Mittag,Rinderhack oder Rinderstreifen,150-180,g,
@@ -63,7 +67,7 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 1,5,Freitag,Snack,Beeren,150,g,
 1,5,Freitag,Snack,Joghurt,150,g,
 1,5,Freitag,Mittag,Tofu,200,g,Bowl Option A
-1,5,Freitag,Mittag,Fisch oder Hähnchen,200,g,Bowl Option B
+1,5,Freitag,Mittag,Fisch oder Hähnchen,200,g,Bowl Option B, gleiche Portionsgröße
 1,5,Freitag,Mittag,Quinoa (gekocht),200,g,
 1,5,Freitag,Mittag,Gemüse,300,g,
 1,5,Freitag,Mittag,Olivenöl,1,EL,
@@ -76,7 +80,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 1,6,Samstag,Frühstück,Banane,1,Stück,Pancakes Zutaten
 1,6,Samstag,Frühstück,Naturjoghurt,150,g,
 1,6,Samstag,Snack,Orange,1,Stück,
-1,6,Samstag,Snack,Kürbiskerne,2,EL,Alternative: Tahin aufs Brot
+1,6,Samstag,Snack,Kürbiskerne,2,EL,Alternativen: Mandeln 20-30 g ODER Cashews 20-30 g
+1,6,Samstag,Snack,Mandeln,20-30,g,Alternative zu Kürbiskernen
+1,6,Samstag,Snack,Cashews,20-30,g,Alternative zu Kürbiskernen
 1,6,Samstag,Mittag,Kichererbsen,200,g,Kichererbsen-Curry
 1,6,Samstag,Mittag,Kokosmilch light,100-150,ml,
 1,6,Samstag,Mittag,Gemüse,300,g,
@@ -104,7 +110,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 2,1,Montag,Frühstück,Apfel,1,Stück,
 2,1,Montag,Frühstück,Chiasamen,1,EL,
 2,1,Montag,Snack,Birne,1,Stück,
-2,1,Montag,Snack,Sonnenblumenkerne,2,EL,
+2,1,Montag,Snack,Sonnenblumenkerne,2,EL,Alternativen: Mandeln 20-30 g ODER Cashews 20-30 g
+2,1,Montag,Snack,Mandeln,20-30,g,Alternative zu Sonnenblumenkernen
+2,1,Montag,Snack,Cashews,20-30,g,Alternative zu Sonnenblumenkernen
 2,1,Montag,Mittag,Sardinen (Dose),120,g,
 2,1,Montag,Mittag,Kartoffeln,250,g,
 2,1,Montag,Mittag,Grüne Bohnen,250,g,
@@ -146,7 +154,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 2,4,Donnerstag,Frühstück,Joghurt (griechisch oder Skyr),250,g,
 2,4,Donnerstag,Frühstück,Beeren,200,g,
 2,4,Donnerstag,Frühstück,Haferflocken,50,g,
-2,4,Donnerstag,Frühstück,Kürbiskerne,1,EL,
+2,4,Donnerstag,Frühstück,Kürbiskerne,1,EL,Alternativen: Mandeln 15-20 g ODER Cashews 15-20 g
+2,4,Donnerstag,Frühstück,Mandeln,15-20,g,Alternative zu Kürbiskernen
+2,4,Donnerstag,Frühstück,Cashews,15-20,g,Alternative zu Kürbiskernen
 2,4,Donnerstag,Snack,Edamame,150,g,
 2,4,Donnerstag,Mittag,Hähnchenbrust,180,g,
 2,4,Donnerstag,Mittag,Kartoffeln,300,g,
@@ -177,7 +187,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 2,6,Samstag,Frühstück,Spinat,100,g,
 2,6,Samstag,Frühstück,Vollkornbrot,60,g,1 Scheibe
 2,6,Samstag,Snack,Orange,1,Stück,
-2,6,Samstag,Snack,Kürbiskerne,2,EL,
+2,6,Samstag,Snack,Kürbiskerne,2,EL,Alternativen: Mandeln 20-30 g ODER Cashews 20-30 g
+2,6,Samstag,Snack,Mandeln,20-30,g,Alternative zu Kürbiskernen
+2,6,Samstag,Snack,Cashews,20-30,g,Alternative zu Kürbiskernen
 2,6,Samstag,Mittag,Putenhack,180,g,Chili
 2,6,Samstag,Mittag,Kidneybohnen,200,g,
 2,6,Samstag,Mittag,Tomaten + Paprika + Zwiebel,300,g,
@@ -206,7 +218,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 3,1,Montag,Frühstück,Beeren,150,g,
 3,1,Montag,Frühstück,Chiasamen,1,EL,
 3,1,Montag,Snack,Banane,1,Stück,
-3,1,Montag,Snack,Sonnenblumenkerne,2,EL,
+3,1,Montag,Snack,Sonnenblumenkerne,2,EL,Alternativen: Mandeln 20-30 g ODER Cashews 20-30 g
+3,1,Montag,Snack,Mandeln,20-30,g,Alternative zu Sonnenblumenkernen
+3,1,Montag,Snack,Cashews,20-30,g,Alternative zu Sonnenblumenkernen
 3,1,Montag,Mittag,Hähnchenbrust,180,g,
 3,1,Montag,Mittag,Vollkornreis (gekocht),250,g,
 3,1,Montag,Mittag,Gemüse,300,g,
@@ -247,7 +261,9 @@ Woche,Tag,Wochentag,Mahlzeit,Lebensmittel,Menge,Einheit,Notiz
 3,4,Donnerstag,Frühstück,Beeren,150,g,Smoothie
 3,4,Donnerstag,Frühstück,Leinsamen,1,EL,Smoothie
 3,4,Donnerstag,Snack,Apfel,1,Stück,
-3,4,Donnerstag,Snack,Kürbiskerne,2,EL,
+3,4,Donnerstag,Snack,Kürbiskerne,2,EL,Alternativen: Mandeln 20-30 g ODER Cashews 20-30 g
+3,4,Donnerstag,Snack,Mandeln,20-30,g,Alternative zu Kürbiskernen
+3,4,Donnerstag,Snack,Cashews,20-30,g,Alternative zu Kürbiskernen
 3,4,Donnerstag,Mittag,Putenbrust,180,g,
 3,4,Donnerstag,Mittag,Kartoffeln,300,g,
 3,4,Donnerstag,Mittag,Gemüse,300,g,
